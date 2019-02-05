@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
-#Commands
+# Commands
 def add_one():
     s = screen_text.get()
     s += '1'
@@ -80,7 +80,7 @@ def percent():
         num = int(s) * 0.01
         screen_text.set(num)
 
-#Calculator Functions
+# Calculator Functions
 class Calculator:
     calc_value = 0.0
 
@@ -146,16 +146,16 @@ class Calculator:
 root = Tk()
 root.title("Calculator")
 
-#Frame
+# Frame
 frame = ttk.Frame(root, padding="20 20 40 40")
 frame.grid(row=0, column=0)
 
-#Calculator Screen
+# Calculator Screen
 screen_text = StringVar()
 screen = ttk.Label(frame, textvariable=screen_text, borderwidth=1, relief="solid", width=38, anchor=E)
 screen.grid(row=1, column=1, columnspan=4)
 
-#Buttons
+# Buttons
 ttk.Button(frame, text="AC", command=all_clear).grid(row=2, column=1)
 ttk.Button(frame, text="+/-", command=negatize).grid(row=2, column=2)
 ttk.Button(frame, text="%", command=percent).grid(row=2, column=3)
@@ -171,7 +171,7 @@ ttk.Button(frame, text="3", command=add_three).grid(row=5, column=3)
 ttk.Button(frame, text="0", width=16, command=add_zero).grid(row=6, column=1, columnspan=2)
 ttk.Button(frame, text=".", command=add_decimal).grid(row=6, column=3)
 
-#Bindings
+# Bindings
 root.bind("1", lambda event: add_one())
 root.bind("2", lambda event: add_two())
 root.bind("3", lambda event: add_three())
